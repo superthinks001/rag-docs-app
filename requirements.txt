@@ -1,7 +1,7 @@
 streamlit
 pandas
 pytesseract
-fitz
+PyMuPDF
 pillow
 docx2txt
 pdf2image
