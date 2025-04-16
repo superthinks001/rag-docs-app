@@ -5,11 +5,11 @@ pymupdf==1.22.5
 pillow
 docx2txt
 pdf2image
+openpyxl
 groq
 langchain
 langchain-community==0.0.21
 langchain-core
 langchain-text-splitters
-langchain-groq
 sentence-transformers
 faiss-cpu
