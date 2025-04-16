@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import fitz  # PyMuPDF
+import fitz 
 import docx2txt
 from pathlib import Path
 import pytesseract
