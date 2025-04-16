@@ -2,7 +2,7 @@
 streamlit
 pandas
 pytesseract
-pymupdf==1.23.7
+pymupdf==1.22.5
 pillow
 docx2txt
 pdf2image
