@@ -7,7 +7,7 @@ docx2txt
 pdf2image
 groq
 langchain
-langchain-community
+langchain-community==0.0.21
 langchain-core
 langchain-text-splitters
 sentence-transformers
