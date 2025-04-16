@@ -9,7 +9,7 @@ from PIL import Image
 from groq import Groq
 
 from langchain_community.vectorstores import FAISS
-from langchain.text_splitter import CharacterTextSplitter
+from langchain_text_splitters import CharacterTextSplitter
 from langchain.chains import RetrievalQA
 from langchain.schema import Document
 from langchain.embeddings import HuggingFaceEmbeddings
