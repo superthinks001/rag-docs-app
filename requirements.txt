@@ -10,5 +10,6 @@ langchain
 langchain-community==0.0.21
 langchain-core
 langchain-text-splitters
+langchain-groq
 sentence-transformers
 faiss-cpu
