@@ -13,14 +13,14 @@ from langchain_text_splitters import CharacterTextSplitter
 from langchain.chains import RetrievalQA
 from langchain.schema import Document
 from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.chat_models import ChatOpenAI
+from langchain_groq import ChatGroq
 
-# 🔐 Set Groq client
+# 🔐 Groq client for summarization
 groq_client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
-# 💬 LLM + Embeddings
+# 🤖 Groq + HuggingFace for Q&A
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-llm_for_qa = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
+llm_for_qa = ChatGroq(temperature=0, model_name="llama3-70b-8192", groq_api_key=st.secrets["GROQ_API_KEY"])
 
 # 🎨 Streamlit setup
 st.set_page_config(page_title="📄 RAG Docs App", layout="wide")
@@ -46,7 +46,6 @@ def preview_file(file, filetype):
     try:
         if filetype == "pdf":
             file.seek(0)
-            text = ""
             with fitz.open(stream=file.read(), filetype="pdf") as doc:
                 text = "\n".join(page.get_text() for page in doc)
             if len(text.strip()) < 50:
@@ -94,7 +93,6 @@ if uploaded_files:
         if isinstance(full_text, pd.DataFrame):
             st.dataframe(full_text)
             full_text = full_text.to_markdown(index=False)
-
         else:
             st.text(full_text[:800] + "..." if len(full_text) > 800 else full_text)
             if len(full_text) > 800:
