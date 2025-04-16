@@ -6,6 +6,7 @@ pillow
 docx2txt
 pdf2image
 openpyxl
+tabulate
 groq
 langchain
 langchain-community==0.0.21
