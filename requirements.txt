@@ -1,7 +1,9 @@
+--no-cache-dir
 streamlit
 pandas
 pytesseract
 pymupdf
+pymupdf==1.23.7
 pillow
 docx2txt
 pdf2image
